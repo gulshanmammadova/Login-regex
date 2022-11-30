@@ -1,7 +1,6 @@
 
 
 function Check() { 
-
 validateUserName();
 Email()
 Password() 
@@ -10,6 +9,7 @@ function validateUserName(){
   
   var username=document.querySelector("#usrname").value;
   if ((username[0] === username[0].toUpperCase())  && username.length>6) {
+    document.querySelector(".useralert").style.display = "none";
     return true;
     }
   else{
@@ -23,6 +23,7 @@ function Email()
   var mailre = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
    if (mail.match(mailre))
     {
+      document.querySelector(".mailalert").style.display = "none";
       return (true)
     }
     else
@@ -35,10 +36,11 @@ function Email()
   }
   
 function Password() {
-  var psswrd = document.querySelector("#pswrd");
+  var psswrd = document.querySelector("#pswrd").value;
   var pswrdre=/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
     if (psswrd.match(pswrdre) ) {
    console.log("xxxx")
+   document.querySelector(".pswrdalert").style.display = "none";
 
    return true;
   }
@@ -47,6 +49,3 @@ function Password() {
  
   }
 }
-
-
-  
